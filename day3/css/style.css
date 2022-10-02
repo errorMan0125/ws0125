@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+}
+body {
+    background-color: pink;
+    margin: 30px 10px 0;
+}
+/* 左右布局 */
+.container {
+    margin: 0 auto;
+    min-width: 1080px;
+    max-width: 2540px;
+    display: grid;
+    grid-template-columns: 804px 30px 250px;
+}
+/* 视频 */
+#video video {
+    width: 100%;
+}
+/* 推荐视频 */
+#recommend-list {
+    background-color: yellow;
+    padding: 10px;
+}
+#recommend-list .recommend-item {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+}
+#recommend-list .recommend-item:not(:nth-child(1)) {
+    margin-top: 10px;
+}
+#recommend-list .recommend-item .recommend-description {
+    margin-left: 10px;
+    font-size: 12px;
+}
+#recommend-list .recommend-item>img {width: 100%;}
+#recommend-list .recommend-item .recommend-description .recommend-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+}
+#recommend-list .recommend-description img {
+    width: 16px;
+    vertical-align: middle;
+}
+.recommend-item-video-info {
+    color: gray;
+}

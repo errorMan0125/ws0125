@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	      name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	
+	<title>Picture View</title>
+</head>
+<body>
+
+<div class="container">
+	<div class="row card-list">
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="card">
+				<img alt="card-picture" src="images/image1.webp" data-imgCard="0">
+				<div class="card-body">
+					<h5 class="card-title">标题</h5>
+					<p class="card-text">文字</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="card">
+				<img alt="card-picture" src="images/ace_image1.jpg" data-imgCard="1">
+				<div class="card-body">
+					<h5 class="card-title">标题</h5>
+					<p class="card-text">文字</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="card">
+				<img alt="card-picture" src="images/ace_image2.jpg" data-imgCard="2">
+				<div class="card-body">
+					<h5 class="card-title">标题</h5>
+					<p class="card-text">文字</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="card">
+				<img alt="card-picture" src="images/ace_image3.jpg" data-imgCard="3">
+				<div class="card-body">
+					<h5 class="card-title">标题</h5>
+					<p class="card-text">文字</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="card">
+				<img alt="card-picture" src="images/image5.webp" data-imgCard="4">
+				<div class="card-body">
+					<h5 class="card-title">标题</h5>
+					<p class="card-text">文字</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="card">
+				<img alt="card-picture" src="images/ace_image5.jpg" data-imgCard="5">
+				<div class="card-body">
+					<h5 class="card-title">标题</h5>
+					<p class="card-text">文字</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="picture-show-modal" tabindex="-1">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body position-relative mx-auto overflow-hidden p-0">
+				<img alt="image" data-scale="1" id="picture-view-img" src="images/image1.webp">
+				<!-- 上一张 下一张 -->
+				<div class="img-previous" role="button" onclick="pictureToggle(-1)"><img alt="previous" draggable="false" src="images/上一页.png"></div>
+				<div class="img-next" role="button" onclick="pictureToggle(1)"><img alt="next" draggable="false" src="images/下一页.png"></div>
+			</div>
+			<div class="modal-footer d-flex justify-content-center">
+				<button class="btn btn-outline-primary" onclick="pictureScale(1.1)">放大</button>
+				<button class="btn btn-outline-primary" onclick="pictureScale(0.9)">缩小</button>
+				<button class="btn btn-outline-primary" onclick="fullScreen()">全屏</button>
+				<a class="download-link" download="#" href="#">
+					<button class="btn btn-outline-primary">下载</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.3.1.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

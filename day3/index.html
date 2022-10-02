@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style>
+		body {
+			width: 100%;
+			margin-top: 200px;
+			background-color: pink;
+		}
+
+		.rainbow {
+			width: 200px;
+			height: 200px;
+			background-color: black;
+			position: relative;
+		}
+
+		.rainbow > div {
+			border-radius: 100%;
+			position: absolute;
+			clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+			animation-name: rainBow;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease;
+		}
+
+		.rainbow > div:nth-child(1) {
+			border: 5px solid blue;
+			width: 100px;
+			height: 100px;
+		}
+
+		.rainbow > div:nth-child(2) {
+			border: 5px solid red;
+			width: 60px;
+			height: 60px;
+			animation-delay: 0.1s;
+		}
+
+		.rainbow > div:nth-child(3) {
+			border: 5px solid yellow;
+			width: 20px;
+			height: 20px;
+			animation-delay: 0.2s;
+		}
+
+		@keyframes rainBow {
+			0% {
+				transform: rotate(0);
+			}
+			60% {
+				transform: rotate(405deg);
+			}
+			80% {
+				transform: rotate(360deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+	<title>彩虹</title>
+</head>
+<body>
+<div class="rainbow">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
+<script>
+	function getDomCss(element, css) {
+		return window.getComputedStyle(element, null).getPropertyValue(css);
+	}
+
+	let rainbowDom = document.querySelector('.rainbow');
+	let rainbowListDom = document.querySelectorAll('.rainbow>div');
+
+	let rainbowDomWidth = getDomCss(rainbowDom, 'width').replace('px', '');
+
+
+	for (let i = 0; i < rainbowListDom.length; i++) {
+		let rainbowListDomWidth = getDomCss(rainbowListDom[i], 'width').replace('px', '');
+
+		rainbowListDom[i].style.left = rainbowListDom[i].style.top = (Number(rainbowDomWidth) / 2 - Number(rainbowListDomWidth) / 2) + 'px';
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: black;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+
+	color: black;
+	font-size: 100px;
+}
+
+.cuber {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	transform-style: preserve-3d;
+	perspective: 3000px;
+	animation-name: CuberRotateAnimation;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes CuberRotateAnimation {
+	from {
+		transform: rotateY(0)
+	}
+	to {
+		transform: rotateY(-359deg)
+	}
+}
+
+.cuber > div {
+	display: block;
+	width: 200px;
+	height: 200px;
+	opacity: 0.4;
+	position: absolute;
+	text-align: center;
+	line-height: 200px;
+	list-style: none;
+	font-size: 124px;
+	background-color: rgba(255, 255, 255, 0.6);
+	border: 1px solid white;
+	border-radius: 12px;
+	transition: all 2s;
+}
+
+/*
+.cuber > div:nth-child(1) {
+	transform: translateZ(380px) rotateY(30deg);
+}
+
+.cuber > div:nth-child(2) {
+	transform: translateZ(380px) rotateY(60deg);
+}
+
+.cuber > div:nth-child(3) {
+	transform: translateZ(380px) rotateY(90deg);
+}
+
+.cuber > div:nth-child(4) {
+	transform: translateZ(380px) rotateY(120deg);
+}*/
+.cuber > div:nth-child(1) {
+	transform: rotateY(0deg) translateZ(380px);
+}
+
+.cuber > div:nth-child(2) {
+	transform: rotateY(30deg) translateZ(380px);
+}
+
+.cuber > div:nth-child(3) {
+	transform: rotateY(60deg) translateZ(380px)
+}
+
+.cuber > div:nth-child(4) {
+	transform: rotateY(90deg) translateZ(380px);
+}
+
+/*.exterior*/
+/*.interior*/

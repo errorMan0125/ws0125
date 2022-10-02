@@ -1,0 +1,57 @@
+.card-list {
+	gap: 30px 0;
+}
+
+#picture-show-modal {
+	padding: 0 30px;
+}
+#picture-show-modal .modal-body>img {
+	width: 1000px;
+}
+@media screen and (max-width: 900px) {
+	#picture-show-modal .modal-body>img {
+		width: 598px;
+	}
+}
+@media screen and (max-width: 500px) {
+	#picture-show-modal .modal-body>img {
+		width: 398px;
+	}
+}
+#picture-show-modal .modal-dialog {
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+}
+
+@media screen and (max-width: 900px) {
+	#picture-show-modal .modal-dialog {
+		max-width: 600px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#picture-show-modal .modal-dialog {
+		max-width: 400px;
+	}
+}
+
+.img-next, .img-previous {
+	position: absolute;
+	top: 0;
+	width: 10%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 1s;
+	cursor: pointer;
+}
+.img-previous img,.img-next img {width: 100%;}
+.img-previous {left: 0;}
+.img-next {right: 0;}
+
+.img-next:hover , .img-previous:hover {
+	opacity: 1;
+}
